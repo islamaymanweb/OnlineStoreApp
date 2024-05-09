@@ -1,0 +1,54 @@
+﻿@model Category
+
+<div id="wrapper">
+    <partial name="_AdminSideNavbar" />
+    <div id="content-wrapper" class="d-flex flex-column">
+          <div id="content">
+                <!-- Topbar -->
+            <!-- Topbar -->
+            <partial name="_AdminTopBar" />
+                <!-- End of Topbar -->
+
+                <!-- End of Main Content -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>New Category</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                        <form method="post" asp-action="Delete">
+			                    <input asp-for="Id" hidden />
+			                    <div class="border p-3 mt-4">
+				                    <div class="row pb-2">
+					                    <h2 class="text-primary">Delete Category</h2>
+					                    <hr />
+				                    </div>
+				                    @*<div asp-validation-summary="All"></div>*@
+				                    <div class="mb-3">
+					                    <label asp-for="Name"></label>
+					                    <input asp-for="Name" disabled class="form-control" />
+				                    </div>
+				                    <div class="mb-3">
+					                    <label asp-for="DiplayOrder"></label>
+					                    <input asp-for="DiplayOrder" disabled class="form-control" />
+				                    </div>
+				                    <button type="submit" class="btn btn-danger" style="width:150px">Delete</button>
+				                    <a asp-controller="Category" asp-action="Index" class="btn btn-secondary" style="width:150px">
+					                    Back to List
+				                    </a>
+			                    </div>
+		                    </form>
+                        </div>
+                    </div>
+                </div>
+          </div>       
+    </div>
+</div>
+
+@section scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

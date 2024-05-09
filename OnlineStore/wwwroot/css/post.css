@@ -1,0 +1,277 @@
+﻿﻿﻿:root {
+    /* grey */
+    --grey-50: #f8fafc;
+    --grey-100: #f1f5f9;
+    --grey-200: #e2e8f0;
+    --grey-300: #cbd5e1;
+    --grey-400: #94a3b8;
+    --grey-500: #64748b;
+    --grey-600: #475569;
+    --grey-700: #334155;
+    --grey-800: #1e293b;
+    --grey-900: #0f172a;
+}
+/* --------------------------------------
+   1. Page-Hero
+-----------------------------------------*/
+
+.page-hero {
+    min-height: 20vh;
+    display: grid;
+    place-items: center;
+    background: #e2e8f0;
+    color: #64748b;
+}
+
+.blog {
+    padding: 40px 0 20px 0;
+}
+
+    .blog .entry {
+        padding: 30px;
+        margin-bottom: 60px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+        .blog .entry .entry-img {
+            max-height: 440px;
+            margin: -30px -30px 20px -30px;
+            overflow: hidden;
+        }
+
+        .blog .entry .entry-title {
+            font-size: 28px;
+            font-weight: bold;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+            .blog .entry .entry-title a {
+                color: #556270;
+                transition: 0.3s;
+            }
+
+        .blog .entry .entry-footer {
+            padding-top: 10px;
+            border-top: 1px solid #e6e6e6;
+        }
+
+            .blog .entry .entry-footer i {
+                color: #a4afba;
+                display: inline;
+            }
+
+            .blog .entry .entry-footer a {
+                color: #606f7e;
+                transition: 0.3s;
+            }
+
+                .blog .entry .entry-footer a:hover {
+                    color: #d9232d;
+                }
+
+            .blog .entry .entry-footer .cats {
+                list-style: none;
+                display: inline;
+                padding: 0 20px 0 0;
+                font-size: 14px;
+            }
+
+                .blog .entry .entry-footer .cats li {
+                    display: inline-block;
+                }
+
+            .blog .entry .entry-footer .tags {
+                list-style: none;
+                display: inline;
+                padding: 0;
+                font-size: 14px;
+            }
+
+                .blog .entry .entry-footer .tags li {
+                    display: inline-block;
+                }
+
+                    .blog .entry .entry-footer .tags li + li::before {
+                        padding-right: 6px;
+                        color: #6c757d;
+                        content: ",";
+                    }
+
+            .blog .entry .entry-footer .share {
+                font-size: 16px;
+            }
+
+                .blog .entry .entry-footer .share i {
+                    padding-left: 5px;
+                }
+
+        .blog .entry .entry-meta {
+            margin-bottom: 15px;
+            color: #c1c8d0;
+        }
+
+            .blog .entry .entry-meta ul {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+            }
+
+                .blog .entry .entry-meta ul li + li {
+                    padding-left: 20px;
+                }
+
+            .blog .entry .entry-meta i {
+                font-size: 16px;
+                margin-right: 8px;
+                line-height: 0;
+            }
+
+            .blog .entry .entry-meta a {
+                color: #777777;
+                font-size: 14px;
+                display: inline-block;
+                line-height: 1;
+            }
+
+.blog-post-title {
+    margin-bottom: .25rem;
+    font-size: 2.5rem;
+}
+
+.blog-post-meta {
+    margin-bottom: 1.25rem;
+    color: #999;
+}
+
+span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+
+#btn-container {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.btn {
+    padding: 0.35rem 0.75rem;
+    letter-spacing: 1.6px;
+    font-size: 0.75rem;
+    color: var(--clr-white);
+    background: var(--clr-primary-5);
+    border-radius: var(--radius);
+    border-color: transparent;
+    text-transform: uppercase;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+#btn-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.page-btn {
+    width: 2rem;
+    height: 2rem;
+    background: var(--clr-primary-7);
+    border-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0.5rem;
+    transition: var(--transition);
+}
+
+.active-btn {
+    background: var(--clr-primary-1);
+    color: var(--clr-white);
+}
+
+.prev-btn,
+.next-btn {
+    background: transparent;
+    border-color: transparent;
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: var(--spacing);
+    margin: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.alert {
+    display: none;
+    background-color: #F3F5F6;
+    color: #000000;
+    border: 1px solid #aaa;
+    width: 300px;
+    height: 100px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/*.posts {
+    margin-bottom: 45px;
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+.post-main-img {
+    position: relative;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+}
+
+.post-title {
+    position: absolute;
+    color: white;
+    font-size: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 35%;
+    text-shadow: 0 0 8px black;
+}
+
+
+.post {
+    margin: 5px;
+    position: relative;
+    height: 400px;
+    display: flex;
+    box-shadow: 0 0 5px black
+}
+
+.post-img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.post-body {
+    margin: -5px 5px 0;
+    padding: 20px 5px;
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}*/
+
+.no-shadow {
+    box-shadow: none;
+}
+
+/*  */
+.notFound {
+    grid-template-columns: 1fr !important;
+    color: var(--tenne-tawny);
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: 100%;
+}

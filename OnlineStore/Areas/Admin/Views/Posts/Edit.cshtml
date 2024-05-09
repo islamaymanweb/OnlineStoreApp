@@ -1,0 +1,95 @@
+﻿@model OnlineStore.Models.ViewModels.PostViewModel
+
+@{
+    var Title = "Create New Post";
+}
+
+<div class="container-fluid">
+    <form asp-controller="Posts" asp-action="Edit" method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="Id" type="hidden" />
+        @if (Model.Id != 0)
+        {
+            //Edit
+            Title = "Edit Template";
+
+        }
+        <div class="col-12 border-bottom">
+            <h2 class="text-primary">@Title</h2>
+        </div>
+        <div class="form-group row">
+            <div class="col-8">
+                <label>Title</label>
+            </div>
+            <div class="col-8">
+                <input class="form-control" asp-for="Title" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-8">
+                <label>Description</label>
+            </div>
+            <div class="col-8">
+                <textarea class="form-control" asp-for="Description"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-8">
+                <label>Tags</label>
+            </div>
+            <div class="col-8">
+                <input class="form-control" asp-for="Tags" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-8">
+                <label>Category</label>
+            </div>
+            <div class="col-8">
+                <select class="form-control" asp-for="Category">
+                    <option value="music">Music</option>
+                    <option value="technology">Technology</option>
+                    <option value="movies">Movies</option>
+                    <option value="news">News</option>
+                    <option value="sports">Sports</option>
+                    <option value="places">Places</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-8">
+                <label>Body</label>
+            </div>
+            <div class="col-8">
+                <textarea rows="5" class="form-control" id="editor" asp-for="Body"></textarea>
+            </div>
+        </div>
+        @if (Model.Id != 0)
+        {
+            <div class="col-3 offset-1 pt-4">
+                <img src="/content/blog/@Model.CurrentImage" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
+            </div>
+        }
+        <div class="form-group row">
+            <div class="col-8">
+                <label>Image</label>
+            </div>
+            <br />
+            <div class="col-8">
+                <input class="btn btn-primary" asp-for="CurrentImage" type="hidden" />
+                <input class="btn btn-sm btn-outline-info" asp-for="Image" />
+            </div>
+        </div>
+        <input class="btn btn-primary btn-group-lg" type="submit" value="Submit" />
+    </form>
+</div>
+
+@section scripts {
+    <script>
+        //Default font size but not for placeholder...
+        $('#editor').summernote({
+            placeholder: "Message"
+        });
+    </script>
+}
+

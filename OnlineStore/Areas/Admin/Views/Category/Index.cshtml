@@ -1,0 +1,57 @@
+﻿
+@{
+    var Title = "Categories";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="wrapper">
+    <partial name="_AdminSideNavbar" />
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <!-- Topbar -->
+            <partial name="_AdminTopBar" />
+            <!-- End of Topbar -->
+            <!-- End of Main Content -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2>Truck Inventory</h2>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="btn btn-primary"style="color:cadetblue;font-weight:bold;font-size:20px" asp-action="Create"asp-controller="Category">Create Category</a>
+                    </div>
+                </div>
+                <!-- Datatables Examples-->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="tblData" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Category Name
+                                        </th>
+                                        <th>
+                                            Display Order
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/js/category.js"></script>
+}
